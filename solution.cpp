@@ -82,14 +82,6 @@ private:
         
         // Find day
         _day += days;
-        
-        // Handle upper boundary (after 2030-12-31)
-        if (_year > 2030 || (_year == 2030 && _month > 12) || (_year == 2030 && _month == 12 && _day > 31)) {
-            // Clamp to 2030-12-31
-            _year = 2030;
-            _month = 12;
-            _day = 31;
-        }
     }
 
 public:
