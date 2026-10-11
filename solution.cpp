@@ -54,6 +54,16 @@ private:
     
     // Convert days since 1900-1-1 back to date
     void fromDays(int days) {
+        // Handle negative days (before 1900-1-1)
+        if (days < 0) {
+            // For this problem, we should never go before 1900-1-1
+            // But if we do, clamp to 1900-1-1
+            _year = 1900;
+            _month = 1;
+            _day = 1;
+            return;
+        }
+        
         _year = 1900;
         _month = 1;
         _day = 1;
